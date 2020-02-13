@@ -16,7 +16,7 @@ counter = myArray.length;
 	function increment() {
         x=myArray.length+1;
         if (counter<=9){counter++;}
-        else if(counter==9){
+        else if(counter>9){
             myStopFunction();}
         console.log(counter);
         myArray.push(x);
@@ -28,10 +28,7 @@ console.log(myArray.length)
 		
 	}
     setInterval('increment()', 1000);
-    if(counter==9){
-        myStopFunction();
-    }
     
     function myStopFunction() {
-        clearInterval(myVar);
+        myArray.shift(myArray[0]);
       }
